@@ -11,7 +11,7 @@ var Vessel = function(x, y) {
   this.vy = 0;
   this.force = 0;
 
-  this.dir = Math.PI/2; // face up
+  this.dir = -Math.PI/2; // face up
   this.spin = 0;
 
   this.spinLeft = function() {
@@ -59,12 +59,12 @@ var Vessel = function(x, y) {
 
     ctx.save();
     ctx.translate(this.x, this.y);
-    ctx.rotate(-Math.PI/2 + this.dir);
+    ctx.rotate(Math.PI / 2 + this.dir);
 
     ctx.beginPath();
-    ctx.moveTo(0, this.height/2)
-    ctx.lineTo(-this.width/2, -this.height/2);
-    ctx.lineTo(this.width/2, -this.height/2);
+    ctx.moveTo(0, -this.height/2);
+    ctx.lineTo(-this.width/2, this.height/2);
+    ctx.lineTo(this.width/2, this.height/2);
     ctx.fill();
 
     ctx.restore();
