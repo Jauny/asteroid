@@ -115,4 +115,4 @@ var setup = function() {
   }, 1000/60);
 };
 
-setup();
+window.onload = setup();
